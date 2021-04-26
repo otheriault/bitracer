@@ -4,7 +4,7 @@ input.onButtonPressed(Button.A, function () {
 input.onButtonPressed(Button.B, function () {
     racer.change(LedSpriteProperty.X, 1)
 })
-input.onLogoEvent(TouchButtonEvent.Pressed, function () {
+input.onGesture(Gesture.Shake, function () {
     speed += -100
 })
 let racer: game.LedSprite = null
