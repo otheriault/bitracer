@@ -4,18 +4,15 @@ input.onButtonPressed(Button.A, function () {
 input.onButtonPressed(Button.B, function () {
     racer.change(LedSpriteProperty.X, 1)
 })
-input.onLogoEvent(TouchButtonEvent.Pressed, function () {
-    if (speed >= 100) {
-        speed += -100
-    }
+input.onGesture(Gesture.Shake, function () {
+    speed += -100
 })
-let speed: number = []
+let score = 0
 let racer: game.LedSprite = null
 racer = game.createSprite(2, 4)
-let obstacles: game.LedSprite[] = []
-let score = 0
-speed = 1000
+let speed = 800
 while (game.isRunning()) {
+    let obstacles: game.LedSprite[] = []
     obstacles.push(game.createSprite(randint(0, 4), 0))
     basic.pause(speed)
     for (let obstacle of obstacles) {

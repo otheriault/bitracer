@@ -7,11 +7,11 @@ input.onButtonPressed(Button.B, function () {
 input.onGesture(Gesture.Shake, function () {
     speed += -100
 })
+let score = 0
 let racer: game.LedSprite = null
 racer = game.createSprite(2, 4)
-let obstacles: game.LedSprite[] = []
-let score = 0
 let speed = 800
+let obstacles: game.LedSprite[] = []
 while (game.isRunning()) {
     obstacles.push(game.createSprite(randint(0, 4), 0))
     basic.pause(speed)
